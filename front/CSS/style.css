@@ -4,52 +4,71 @@ html {
     scroll-behavior: smooth;
   }
 
-  header {
+header {
     position: sticky;
     top: 0;
     bottom: 0;
     border-top: 0;
     border-bottom: thin solid;
-    z-index: 999;
-    width:  100%;
-    background-color:#85929e ;
-  }
+    width: 100%;
+    background-color:#5d2260 ;
+}
+
+.logo:hover {
+    animation: pulse 1.5s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.alias {
+    margin: 15px 15px 15px 2px;
+    display: flex;
+    font-family:'Raleway', sans-serif;
+    color: white;
+}
 
 
-  body {
+body {
     margin: 0;
     width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: #2e4053;
-  }
+    background-color: #f3eaf3  ;
+}
 
-  h1 {
+h1 {
     margin: 20px;
-    color: white;
+    color: black;
     text-align: center;
-  }
+}
 
-  h2 {
+h2, h3 {
     font-size: 20px;
-  }
+    text-align: center;
+    color: black;
+}
 
-  .header-container {
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 75em;
-    height: 4rem;
+.header-container{
+    margin-right: 20px;
+    margin-left: 45px;
+    width: 90%;
+    height: 5rem;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: 0 1rem;
+    flex-wrap: nowrap;
     padding: 0 1rem;
-  }
-
-
+    justify-content: space-between;
+    align-items: center;
+} 
 .logo {
-    width: 10%;
+    width: 20%;
     height: 4rem;
     display: flex;
     justify-content: center;
@@ -59,57 +78,75 @@ html {
 
 
 .logo img {
+    margin: 5px;
     padding: 0.25rem;
     width: auto;
     height: 3.5rem;
 }
 
-.logo:hover {
-    animation: pulse 1.5s linear infinite;
-  }
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-
-.alias {
-    margin: 0;
-    display: block;
-    font-family:'Raleway', sans-serif;
-    color: white;
-  }
-
-  div, nav {
-    unicode-bidi: isolate;
-  }
-
-  .menu {
-    margin: 3%;
-    width: 100%;
-    height: 1.5rem;
+.menu {
     display: flex;
+    margin: 20px;
+    width: 50%;
+    height: 1.5rem;
     justify-content: space-evenly;
-    align-items: center;
-  }
+}
 
-  .menu a {
-    top:  30px;
+.menu a {
     bottom: 0;
     font-family: 'Raleway', sans-serif;
     letter-spacing: 2px;
-  }
-
-  .menu a:hover {
     color: white;
+    font-size: 20px;
+}
+
+.menu a:hover {
     box-shadow: inset 0 -2px 0 #82e0aa;
-  }
+    padding-bottom: 30px;
+}
+
+.moviesCard {
+    background-color: #d8bfd8 ;
+    padding: 1em;
+    width: 18em;
+    height: 30em;
+    border-radius:  15px;
+    margin: 35px;
+    display:flex;
+    flex-direction: column;
+}
+.moviesCard img {
+    width: 10em;
+    display: flex;
+    justify-content: center;
+}
+.movieCardTitle {
+    font-size: 2em;
+}
+
+.tag {
+    padding:  0.3em;
+    border-radius: 10px;
+    background-color: #b86e14;
+    display:inline-flex;
+    color: black;
+    margin: 5px;
+}
+
+.moviesContainer {
+    background-color: #dbd3db;
+    border-radius: 15px;
+    margin: 30px;
+    width: 70em;
+    height: 35em;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+a {    
+    font-size: 30px;
+}
+
 
 

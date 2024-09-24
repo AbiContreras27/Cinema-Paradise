@@ -1,51 +1,65 @@
 console.log(tempData);
 
-class Repository {
-    constructor(){
-        this.tempData;
-        this.currentId = 1;
-    }
+    const createCard = (movie) => {
+        const card = document.createElement("div");
+        card.classList.add("moviesCard");
 
-    createCard(extraerCard) {
-        const {title, year, director, duration, genre, rate, poster } = extraerCard;
-
-        const titleMovie = document.createElement('a');
-        const yearMovie = document.createElement('p');
-        const durationMovie = document.createElement('p');
-        const directorMovie = document.createElement('P');
-        const genreMovie = document.createElement('p');
-        const rateMovie = document.createElement('p');
         const imgPoster = document.createElement('img');
-        
-        titleMovie.innerHTML = title;
-        yearMovie.innerHTML = year;
-        directorMovie.innerHTML = director;
-        durationMovie.innerHTML = duration;
-        genreMovie.innerHTML = genre;
-        rateMovie.innerHTML = rate;
-        imgPoster.innerHTML = poster;
+        imgPoster.src = movie.poster;
+        imgPoster.classList.add('cardImg');
 
-        const movieElement = document.createElement('div');
+        const titleMovie = document.createElement('h3');
+        titleMovie.classList.add("movieCardtitle");
+        titleMovie.innerHTML = movie.title;
 
-        movieElement.appendChild(titleMovie);
-        movieElement.appendChild(yearMovie);
-        movieElement.appendchild(directorMovie);
-        movieElement.appendChild(durationMovie);
-        movieElement.appendChild(genreMovie);
-        movieElement.appendChild(rateMovie);
-        movieElement.appendChild(imgPoster);
-    };
+        const yearMovie = document.createElement('span',['Year:']);
+        yearMovie.classList.add("yearSpan");
+        yearMovie.innerHTML = 'Year: ' + movie.year;
 
-    buildCards() {
-        const movieContainer = document.getElementById('movieContainer');
-        movieContainer.innerHTML = " ";
-        
-        const movies = this.tempData;
-        const cardMovies = movies.map(movie => this.createCard(extraerCard));
+        const directorMovie = document.createElement('span');
+        directorMovie.classList.add("directorSpan");
+        directorMovie.innerHTML = 'Director: ' + movie.director;
 
-        cardMovies.forEach(pelicula => {
-            movieContainer.appendChild(pelicula);
+        const duracionMovie = document.createElement('span');
+        duracionMovie.classList.add("duracionSpan");
+        duracionMovie.innerHTML = 'Duración: ' + movie.duration;
+
+        const tags = document.createElement('div');
+        tags.classList.add('tagsMovies');
+
+
+        const genresTags = movie.genre.map((genero) => {
+            const tag = document.createElement('span');
+            tag.classList.add('tag');
+            tag.innerHTML = genero;
+            return tag;
         });
-    };
 
-};
+        genresTags.forEach((element) => {
+            tags.appendChild(element);
+        });
+
+        card.appendChild(imgPoster);
+        card.appendChild(titleMovie);
+        card.appendChild(yearMovie);
+        card.appendChild(directorMovie);
+        card.appendChild(duracionMovie);
+        card.appendChild(tags);
+
+        return card;
+
+
+
+    };
+const rendeCards = (data) => {
+    const cards = data.map(createCard);
+    const container = document.getElementById('moviesContainer');
+    container.classList.add('moviesContainer')
+    container.innerHTML = "";
+    cards.forEach(element => {container.appendChild(element); 
+
+    });
+};     
+   rendeCards(tempData);
+
+    
