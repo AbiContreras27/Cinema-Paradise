@@ -1,4 +1,11 @@
-console.log(tempData);
+
+
+const URL = "https://students-api.up.railway.app/movies";
+
+const fetchData = () => {$.get(URL, (data) => {rendeCards(data);}).fail(() => {
+    alert("Error al obtener el listado de peliculas");
+});
+};
 
     const createCard = (movie) => {
         const card = document.createElement("div");
@@ -48,8 +55,6 @@ console.log(tempData);
 
         return card;
 
-
-
     };
 const rendeCards = (data) => {
     const cards = data.map(createCard);
@@ -60,6 +65,5 @@ const rendeCards = (data) => {
 
     });
 };     
-   rendeCards(tempData);
 
-    
+fetchData(); 
