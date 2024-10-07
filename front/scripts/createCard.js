@@ -1,7 +1,9 @@
-
 const createCard = (movie) => {
     const card = document.createElement("div");
     card.classList.add("moviesCard");
+
+    const cardFront = document.createElement("div");
+    cardFront.classList.add("front");
 
     const imgPoster = document.createElement('img');
     imgPoster.src = movie.poster;
@@ -11,6 +13,9 @@ const createCard = (movie) => {
     titleMovie.classList.add("movieCardtitle");
     titleMovie.innerHTML = movie.title;
 
+    const cardBack = document.createElement("div");
+    cardBack.classList.add("back");
+    
     const yearMovie = document.createElement('span');
     yearMovie.classList.add("yearSpan");
     yearMovie.innerHTML = '<span class="subtitle">Year:</span> ' + movie.year;
@@ -45,35 +50,19 @@ const createCard = (movie) => {
         tags.appendChild(element);
     });
 
-    card.appendChild(imgPoster);
-    card.appendChild(titleMovie);
-    card.appendChild(yearMovie);
-    card.appendChild(directorMovie);
-    card.appendChild(duracionMovie);
-    card.appendChild(rateMovie);
-    card.appendChild(titleTags);
-    card.appendChild(tags);
+    cardFront.appendChild(imgPoster);
+    cardFront.appendChild(titleMovie);
+    cardBack.appendChild(yearMovie);
+    cardBack.appendChild(directorMovie);
+    cardBack.appendChild(duracionMovie);
+    cardBack.appendChild(rateMovie);
+    cardBack.appendChild(titleTags);
+    cardBack.appendChild(tags);
+
+    card.appendChild(cardFront);
+    card.appendChild(cardBack);
 
     return card;
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-    llenarSelectYear();
-})
-
-const llenarSelectYear = () => {
-    const yearMax = new Date().getFullYear();
-    const yearMin = yearMax - 50;
-    const year = document.querySelector('#movieYear')
-
-    for(let i = yearMax; i >= yearMin; i--){
-        const option = document.createElement('option');
-        option.value = i;
-        option.textContent = i;
-
-        year.appendChild(option);
-
-    }
 };
 
 module.exports = {createCard};

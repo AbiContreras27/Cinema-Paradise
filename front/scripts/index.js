@@ -1,6 +1,7 @@
 const { fetchData } = require("./fetchData");
 
-const URL = "http://localhost:3000/movies";
+ const URL = "http://localhost:3000/movies";
+
 
 
 

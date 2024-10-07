@@ -1,6 +1,7 @@
 const axios = require("axios")
 const {rendeCards }= require("./rendeCards");
 
+const URL = "https://students-api.up.railway.app/movies";
 const fetchData = async(URL) => {
 
 //! con metodo AJAX
