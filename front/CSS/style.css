@@ -196,6 +196,7 @@ p {
 /* ! Página Géneros */
 
 .articlePicture {
+    margin: 5px;
     background-color:#d8bfd8;
     box-shadow: inset;
     border-radius: 15px;
@@ -236,7 +237,7 @@ p {
 }
 
 .conceptoCine {
-    margin: 25px;
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     background-color: #d8bfd8;
@@ -252,32 +253,28 @@ p {
     margin: 25px;
 }
 
-.origenCine {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.origenCine  img{
-    width: 550px;
-}
-
-.imgHistoriaCine {
-    display: flex;
-    justify-content: center;
-}
-
-.imgHistoriaCine img {
-    margin: 25px;
-    width: 550px;
-    height: 255px;
+#camCine {
+    margin: 20px;
+    width: 25em;
     border-radius: 15px;
+    box-shadow: 20px;
+    filter: drop-shadow(0 2px 5px rgba(62, 18, 65, 0.9));
+}
+
+.imgHistory {
+    margin-top: 25px;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    width: auto;
+    height: auto;
+    flex-direction: column;
+    align-content: center;
+    filter: drop-shadow(0 2px 5px rgba(62, 18, 65, 0.9));
 }
 
 .pCine {
     background-color: #d8bfd8;
-    margin-left: 250px;
-    margin-right: 250px;
     border-radius: 15px;
 }
 
@@ -352,7 +349,7 @@ p {
 /* ! Section footer  y mano hacia arriba */
 
 .manoScroll a {
-    font-size: 35px;
+    font-size: 25px;
     display: flex;
     justify-content: right;
     margin: 30px;
